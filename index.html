@@ -29,13 +29,15 @@
 
         <ul class="site-nav ">
 
-               <li class="item to-logo"><a href="/" class="link current"> Студия</a></li>
+
+            <li class="item to-logo"><a href="/" class="link current active-line"> Студия</a></li>
                <li class="item"><a href="./portfolio.html" class="link"> Портфолио</a></li>
                <li class="item"><a href="" class="link"> Контакты</a></li>
       
     </ul>
    
     
+
     </nav>
     
     <!-- Contact container -->
@@ -76,7 +78,7 @@
 <section class="hero">
    
     <h1 class="hero-title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ<br />ДЛЯ ВАШЕГО БИЗНЕСА</h1>
-    <a  href="" class="button" >Заказать услугу</a>
+    <button data-modal-open href="" class="button">Заказать услугу</button>
 
 </section>
 
@@ -155,7 +157,13 @@
         
             <li class="img-work">
                 <a href="">
+                    <div class="our-work-box">
                     <img src="./img/box1.jpg" alt="" width="370" height="294">
+                    
+                    <div class="position-our-work">
+                        <p class="tex-box">ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</p>
+                    </div>
+                    </div>
                 </a>
             </li>
             <li class="img-work">
@@ -447,6 +455,7 @@
 
 </main>
 
+
 <footer class="main-footer">
 
     <div class="container-footer">
@@ -512,9 +521,26 @@
     </ul>
     </div>
     </div>
+    <a href=""></a>
 
 </footer>
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal-hero">
+        <button class="modal-link" data-modal-close>
+            <svg class="modal-icon-close">
+                <use href="./img/close-icon.svg#close-icon">
+            
+                </use>
+            </svg>
+        </button>
+         
+        
+    </div>
 
+</div>
+
+
+<script src="./js/modal.js"></script>
 </body>
 
 
