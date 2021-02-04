@@ -37,6 +37,7 @@ ul {
 .main-nav {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .container-margin {
@@ -99,6 +100,7 @@ ul {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .text-secondary {
@@ -109,15 +111,32 @@ ul {
   color: var(--color-forces-color);
 }
 
-/* .active-line::after {
+.active-line::after {
   position: absolute;
   content: '';
   display: block;
   width: 48px;
   height: 4px;
-  bottom: 0%;
+  border-radius: 2px;
+  bottom: 0;
 
   background-color: var(--color-forces-color);
+}
+
+.active-line-portf::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 78px;
+  height: 4px;
+  border-radius: 2px;
+  bottom: 0;
+
+  background-color: var(--color-forces-color);
+}
+
+/* .item {
+  position: relative;
 } */
 
 .site-nav {
@@ -133,10 +152,6 @@ ul {
   margin-bottom: 0;
   display: flex;
 }
-
-/* .item {
-  position: relative;
-} */
 
 .site-nav .to-logo {
   margin-left: 93px;
@@ -335,9 +350,12 @@ ul {
   padding-left: 0;
 }
 
+.our-work-box img {
+  display: block;
+}
+
 .our-work-box {
   position: relative;
-  display: flex;
 }
 
 .position-our-work {
@@ -442,12 +460,14 @@ ul {
   height: 44px;
   background-color: var(--white-bg-color);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover .social-icon,
@@ -477,6 +497,7 @@ ul {
   margin-top: 50px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .one-client {
@@ -492,6 +513,7 @@ ul {
   height: 49.226806640625px;
   width: 44.269989013671875px;
   fill: #afb1b8;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .two-size {
@@ -553,6 +575,7 @@ ul {
   color: var(--main-color-titles-color);
   margin-top: 0;
   margin-bottom: 0;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button {
@@ -637,6 +660,11 @@ ul {
   margin-right: 0;
 
   outline: 1px solid #eeeeee;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.examples-focus {
+  overflow: hidden;
 }
 
 .examples-focus:hover,
@@ -669,6 +697,7 @@ ul {
 
 .portfolio-image {
   position: relative;
+  display: block;
 }
 
 .portfolio-image::before {
@@ -676,13 +705,27 @@ ul {
   position: absolute;
   width: 100%;
   height: 100%;
+  transform: translateY(100%);
 
   opacity: 0;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-image:hover::before {
+.examples-focus:hover .portfolio-image::before,
+.examples-focus:focus .portfolio-image::before {
+  transform: translateY(0);
   opacity: 1;
+  background-color: rgba(33, 150, 243, 0.9);
 }
+
+/* .portfolio-image:hover::before,
+.portfolio-image:focus::before {
+  transform: translateY(0);
+  opacity: 1;
+  background-color: rgba(33, 150, 243, 0.9);
+} */
 
 .examples-description {
   position: absolute;
@@ -690,15 +733,16 @@ ul {
   height: 100%;
   top: 50%;
   left: 50%;
+  /* overflow: auto; */
 
   opacity: 0;
   transform: translate(-50%, -50%);
-  transition: 250ms opacity cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.examples-focus:hover .examples-description {
+.examples-focus:hover .examples-description,
+.examples-focus:focus .examples-description {
   opacity: 1;
-  background-color: rgba(33, 150, 243, 0.9);
   color: var(--white-bg-color);
 }
 
@@ -798,6 +842,7 @@ footer .link {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-footer {
@@ -809,6 +854,10 @@ footer .link {
 .webstydio-link:hover,
 .webstydio-link:focus {
   background-color: var(--color-forces-color);
+}
+
+.social-icon {
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstydio-link:hover .social-icon,
@@ -840,6 +889,7 @@ footer .link.color {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.2);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -858,17 +908,17 @@ footer .link.color {
 }
 
 .modal-link {
-  content: '';
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+
   width: 30px;
   height: 30px;
+  background-color: transparent;
+  cursor: pointer;
 
   border-radius: 50%;
-  margin-left: 490px;
-  margin-top: 8px;
-  margin-right: 8px;
+
+  top: 8px;
+  right: 8px;
 }
 
 .modal-icon-close {
