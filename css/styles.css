@@ -337,6 +337,7 @@ ul {
 
 .our-work-box {
   position: relative;
+  display: flex;
 }
 
 .position-our-work {
@@ -344,6 +345,7 @@ ul {
   background-color: rgba(47, 48, 58, 0.8);
   width: 100%;
   height: 70px;
+  bottom: 0;
 }
 
 .tex-box {
@@ -857,13 +859,13 @@ footer .link.color {
 
 .modal-link {
   content: '';
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
-  background-color: var(--white-bg-color);
+
   border-radius: 50%;
-  border: 1px solid #000000;
   margin-left: 490px;
   margin-top: 8px;
   margin-right: 8px;
