@@ -583,12 +583,14 @@ ul {
   background-color: var(--color-forces-color);
   font-family: inherit;
   border-radius: 4px;
-
+  border-color: transparent;
   display: inline-block;
   min-width: 200px;
+  min-height: 50px;
   text-align: center;
   padding: 10px 32px;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 .navigation .nav-title:hover,
@@ -926,5 +928,4 @@ footer .link.color {
   width: 18px;
   height: 18px;
   display: flex;
-  line-height: 0;
 }
