@@ -901,8 +901,8 @@ footer .link.color {
 
 .modal-hero {
   position: absolute;
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -928,4 +928,8 @@ footer .link.color {
   width: 18px;
   height: 18px;
   display: flex;
+}
+
+textarea {
+  resize: none;
 }
